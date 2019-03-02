@@ -7,13 +7,13 @@ An example:
 
 Number of letter = 1000 = 1111101000 as binary
 1.: The binary number is divided into 7-bit parts (the last one is padded with zeros)
-    0000111 + 1101000
+    **0000**111 + 1101000
     
 2.: From left to right, all 7 bit parts (except the last one) get a 1 bit in front, which means that the next byte belongs to the
     same number.
     Instead, the last part gets a 0 bit in front, which means that the next byte does not belong to the same number anymore.
     If only one part was created at step one, the part gets a 0 bit up front.
-    10000111 + 01101000
+    **1**0000111 + **0**1101000
     
 3.: Finally, the resulting bytes are written together in a file (or you do something else with them).
     1000011101101000
