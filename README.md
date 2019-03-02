@@ -1,5 +1,5 @@
-# chain-encoding
-Chain encoding is a simple, (with with numbers less than 128) ASCII-compatible encoding that uses the unused 8th bit of an ASCII byte to concatenate multiple bytes (like a chain).
+# Chain-encoding
+Chain encoding is a simple, (used with numbers less than 128) ASCII-compatible encoding that uses the unused 8th bit of an ASCII byte to concatenate multiple bytes (like a chain).
 As a result, an infinite number of letter variants can be stored.
 (Warning: this encoding was conceived just for fun, mistakes can happen with high probability!)
 
