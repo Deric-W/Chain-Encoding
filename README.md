@@ -6,7 +6,8 @@ As a result, an infinite number of letter variants can be stored.
 An example:
 
 Number of letter = 1000 = 1111101000 as binary
-1.: The binary number is divided into 7-bit parts (the last one is padded with zeros)
+
+1.: The binary number is divided into 7-bit parts beginning from the end (the last one is padded with zeros)
     **0000**111 + 1101000
     
 2.: From left to right, all 7 bit parts (except the last one) get a 1 bit in front, which means that the next byte belongs to the
