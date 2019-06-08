@@ -9,7 +9,7 @@ If the bit is 0, a new chain is created.
 For more information, visit https://github.com/Deric-W/Chain-Encoding.
 """
 
-__all__ = ["encode","decode","search","int2bytes","bytes2int","is_corrupted"]
+__all__ = ["encode", "decode", "search", "int2bytes", "bytes2int", "is_corrupted"]
 __autor__ = "Deric W."
 __version__ = 0.3
 
@@ -19,7 +19,7 @@ def decode(bytes_):
         if byte > 127:      # byte like 1xxxxxxx --> append
             byte = byte & 127   # remove leading 1
             if len(output) > 0:
-                output[-1] = (output[-1] << 7)|byte
+                output[-1] = (output[-1] << 7) | byte
             else:
                 raise ValueError("missing start byte")
         else:                     # new int (chr)
@@ -35,7 +35,7 @@ def encode(string):
         char = ord(char)
         buffer = b""          # needed because reversed build order
         while char > 127:     # chain bytes with leading 1
-            buffer = bytes([128|(char & 127)]) + buffer
+            buffer = bytes([128 | (char & 127)]) + buffer
             char = char >> 7
         buffer = bytes([char]) + buffer        # int fits in 1 byte and has leading 0 --> start byte 
         output += buffer
@@ -46,7 +46,7 @@ def int2bytes(num_list):      # like encode, but with a list of integrers as inp
     for num in num_list:
         buffer = b""
         while num > 127:
-            buffer = bytes([128|(num & 127)]) + buffer
+            buffer = bytes([128 | (num & 127)]) + buffer
             num = num >> 7
         buffer = bytes([num]) + buffer
         output += buffer
@@ -58,7 +58,7 @@ def bytes2int(bytes_):       # like decode, but with a list of integrers as outp
         if byte > 127:
             byte = byte & 127
             if len(output) > 0:
-                output[-1] = (output[-1] << 7)|byte
+                output[-1] = (output[-1] << 7) | byte
             else:
                 raise ValueError("missing start byte")
         else:
