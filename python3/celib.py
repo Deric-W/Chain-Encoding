@@ -37,10 +37,10 @@ def encode(string):
         while char > 127:     # chain bytes with leading 1
             buffer = bytes([128 | (char & 127)]) + buffer
             char = char >> 7
-        buffer = bytes([char]) + buffer        # int fits in 1 byte and has leading 0 --> start byte 
+        buffer = bytes([char]) + buffer        # int fits in 1 byte and has leading 0 --> start byte
         output += buffer
     return output, len(string)
-    
+
 def int2bytes(num_list):      # like encode, but with a list of integrers as input
     output = b""
     for num in num_list:
