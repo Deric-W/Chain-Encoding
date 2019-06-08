@@ -6,7 +6,7 @@ As a result, an infinite number of letters can be stored.
 If the bit is 1, the other 7 bits are chained to the previous byte.
 If the bit is 0, a new chain is created.
 
-### Examples
+## Examples
 ### E
 **0**1000101 --> new Chain 1000101 --> 1000101 --> 69 --> `E`
 
